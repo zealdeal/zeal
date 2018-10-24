@@ -1,0 +1,5 @@
+zeal-qt usr/bin
+share/pixmaps/bitcoin32.xpm usr/share/pixmaps
+share/pixmaps/bitcoin80.xpm usr/share/pixmaps
+debian/zeal-qt.desktop usr/share/applications
+debian/zeal-qt.protocol usr/share/kde4/services/

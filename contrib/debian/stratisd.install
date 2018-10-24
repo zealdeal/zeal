@@ -1,0 +1,2 @@
+debian/bin/zeald usr/bin
+src/zeald usr/lib/zeal
