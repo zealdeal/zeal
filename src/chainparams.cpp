@@ -71,13 +71,13 @@ public:
         // The message start string is designed to be unlikely to occur in normal data.
         // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
         // a large 4-byte int at any alignment.
-        pchMessageStart[0] = 0x70;
-        pchMessageStart[1] = 0x35;
-        pchMessageStart[2] = 0x22;
-        pchMessageStart[3] = 0x05;
-        vAlertPubKey = ParseHex("04cc9f5c081efb514a2e755fd403f62c6484f9a160dba4b6e47a84cc1615168f645a4d54662049024f315858560cae732fc17eaf9db6b663d77ed11429d7a100f6");
-        nDefaultPort = 19278;
-        nRPCPort = 18274;
+        pchMessageStart[0] = 0xa3;
+        pchMessageStart[1] = 0x19;
+        pchMessageStart[2] = 0xb6;
+        pchMessageStart[3] = 0x7b;
+        vAlertPubKey = ParseHex("040ed6e5fcedb2367742d878b31dcff3728b451cced14869590c685aadc521a701e74bb2fcf604bdd7cd12f58afa00dd98b3e433280e8b7e5119f07a005bb1856a");
+        nDefaultPort = 30125;
+        nRPCPort = 30135;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 20);
 
         // Build the genesis block. Note that the output of the genesis coinbase cannot
@@ -88,7 +88,7 @@ public:
         //    CTxIn(COutPoint(0000000000, 4294967295), coinbase 00012a24323020466562203230313420426974636f696e2041544d7320636f6d6520746f20555341)
         //    CTxOut(empty)
         //  vMerkleTree: 12630d16a9
-        const char* pszTimestamp = "You have to work but with Zeal!";
+        const char* pszTimestamp = "Zeal Coin - 2018";
         std::vector<CTxIn> vin;
         vin.resize(1);
         vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
@@ -100,19 +100,17 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1470467000;
+        genesis.nTime    = 1521668721;
         genesis.nBits    = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce   = 1831645;
+        genesis.nNonce   = 2601477;
 
         hashGenesisBlock = genesis.GetHash();
+        
+        assert(hashGenesisBlock == uint256("0xf5e6d0c722a178b571b5554a2940507c9c9547685ff261de2f0171bf7b80225f"));
+        assert(genesis.hashMerkleRoot == uint256("0xa187ee6dc2263005ebf3635453e9c771d865ad830f54e4e9b29ffbe1a4a25ea0"));
 
-        assert(hashGenesisBlock == uint256("0x90cb0c1e0348df7b37132830c83758e5d83174677248d3cf12e0df3af8611f59"));
-        assert(genesis.hashMerkleRoot == uint256("0xb345da524a4ab8121903e2cd1e30171c5ce1339190497be25fdc2c259eaa39aa"));
-
-        vSeeds.push_back(CDNSSeedData("Seednode1", ""));
-        //vSeeds.push_back(CDNSSeedData("Seednode2", "seednode2.zeal.cloud"));
-        //vSeeds.push_back(CDNSSeedData("Seednode3", "seednode3.zealplatform.com"));
-        //vSeeds.push_back(CDNSSeedData("Seednode4", "seednode4.zeal.cloud"));
+        vSeeds.push_back(CDNSSeedData("Seednode1", "142.93.168.42"));
+        
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 81);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 125);
@@ -148,10 +146,10 @@ public:
         // The message start string is designed to be unlikely to occur in normal data.
         // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
         // a large 4-byte int at any alignment.
-        pchMessageStart[0] = 0x81;
-        pchMessageStart[1] = 0x91;
-        pchMessageStart[2] = 0x11;
-        pchMessageStart[3] = 0x01;
+        pchMessageStart[0] = 0x5a;
+        pchMessageStart[1] = 0x0a;
+        pchMessageStart[2] = 0x9b;
+        pchMessageStart[3] = 0x5b;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 16);
         vAlertPubKey = ParseHex("0471dc165db490094d35cde15b1f5d755fa6ad6f2b5ed0f340e3f17f57389c3c2af113a8cbcc885bde73305a553b5640c83021128008ddf882e856336269080496");
         nDefaultPort = 26178;
@@ -161,18 +159,15 @@ public:
         // Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();
         genesis.nNonce = 2433759;
-        genesis.nTime    = 1493909211;
-  
+        genesis.nTime    = 1521668761;
+
         hashGenesisBlock = genesis.GetHash();
-    
-        assert(hashGenesisBlock == uint256("0x94c8a8f83e7c928e0d1a44c20aed5d092b7cfacd44d53b101f810d20b7b57795"));
+         
+        assert(hashGenesisBlock == uint256("0x03cfb4879eb3c2fe74753630ce9d8b68e3385efb698a2702fde1958d0a02e8a7"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        //vSeeds.push_back(CDNSSeedData("testseednode1", "testnet1.zealplatform.com"));
-        //vSeeds.push_back(CDNSSeedData("testseednode2", "testnet2.zealplatform.com"));
-        //vSeeds.push_back(CDNSSeedData("testseednode3", "testnet3.zealplatform.com"));
-        //vSeeds.push_back(CDNSSeedData("testseednode4", "testnet4.zealplatform.com"));
+        vSeeds.push_back(CDNSSeedData("zealplatform.com", "testnode1.zealplatform.com"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 81); // zeal test net start with Z
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 196);
@@ -195,19 +190,21 @@ static CTestNetParams testNetParams;
 class CRegTestParams : public CTestNetParams {
 public:
     CRegTestParams() {
-        pchMessageStart[0] = 0xfa;
-        pchMessageStart[1] = 0xbf;
-        pchMessageStart[2] = 0xb5;
-        pchMessageStart[3] = 0xda;
+        pchMessageStart[0] = 0xf1;
+        pchMessageStart[1] = 0xbc;
+        pchMessageStart[2] = 0xb2;
+        pchMessageStart[3] = 0xd1;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 1);
-        genesis.nTime = 1411111111;
+        genesis.nTime = 1521668803;
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();
         genesis.nNonce = 1659424;
+
         hashGenesisBlock = genesis.GetHash();
+
         nDefaultPort = 18444;
         strDataDir = "regtest";
 //        MineGenesis(genesis);
-        assert(hashGenesisBlock == uint256("0xba57f6b9777f0657f445ef5784a4f09e33b192b65f91d9c3645f270559c504fe"));
+        assert(hashGenesisBlock == uint256("0x91ab51cb1e2cd4519408c025d62bb7148eb7b9497b5856cda15932e9295b490b"));
 
         vSeeds.clear();  // Regtest mode doesn't have any DNS seeds.
     }

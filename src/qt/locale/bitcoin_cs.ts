@@ -2735,8 +2735,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Zeal Alert&quot; admin@foo.com
     </message>
     <message>
         <location line="+5"/>
-        <source>Listen for connections on &lt;port&gt; (default: 19278 or testnet: 25714)</source>
-        <translation>Naslouchej připojením na &lt;port&gt; (výchozí: 19278 nebo testovací síť: 25714)</translation>
+        <source>Listen for connections on &lt;port&gt; (default: 9199 or testnet: 25714)</source>
+        <translation>Naslouchej připojením na &lt;port&gt; (výchozí: 9199 nebo testovací síť: 25714)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2785,8 +2785,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Zeal Alert&quot; admin@foo.com
     </message>
     <message>
         <location line="+62"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 18274 or testnet: 25715)</source>
-        <translation>Naslouchej JSON-RPC připojením na &lt;port&gt; (výchozí: 18274 nebo testovací síť: 25715)</translation>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 9191 or testnet: 25715)</source>
+        <translation>Naslouchej JSON-RPC připojením na &lt;port&gt; (výchozí: 9191 nebo testovací síť: 25715)</translation>
     </message>
     <message>
         <location line="-16"/>
